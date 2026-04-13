@@ -1432,13 +1432,6 @@
             </div>
           </div>
           <div class="contact-item">
-            <div class="contact-icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></div>
-            <div>
-              <div class="contact-label">Phone</div>
-              <div class="contact-value"><a href="tel:+962788284515">+(962) 788284515</a></div>
-            </div>
-          </div>
-          <div class="contact-item">
             <div class="contact-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
             <div>
               <div class="contact-label">Location</div>
@@ -1454,9 +1447,6 @@
           </a>
           <a href="https://github.com/yousra-mansour" target="_blank" rel="noopener" class="social-btn">
             <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub — yousra-mansour
-          </a>
-          <a href="https://t.me/yousra_mansour" target="_blank" rel="noopener" class="social-btn">
-            <i class="fa-brands fa-telegram" aria-hidden="true"></i> Telegram — @yousra_mansour
           </a>
           <a href="mailto:Yousra.m.mansour@gmail.com" class="social-btn">
             <i class="fa-solid fa-envelope" aria-hidden="true"></i> Send me an email
@@ -1590,7 +1580,8 @@
   (function () {
     const btn = document.getElementById('themeToggle');
     const icon = document.getElementById('themeIcon');
-    const stored = localStorage.getItem('theme') || 'dark';
+    const systemPrefers = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    const stored = localStorage.getItem('theme') || systemPrefers;
     document.documentElement.setAttribute('data-theme', stored);
     icon.className = stored === 'light' ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
 
